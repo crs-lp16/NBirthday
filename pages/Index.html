@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<title>H - 🎂</title>
+    	<meta charset="utf-8" />
+
+<style>
+	body,
+html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: "Comic Sans MS", cursive;
+	background: linear-gradient(180deg, #ffe1f0, #ffc6ff);
+	overflow: hidden;
+}
+
+.full-start {
+
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    background: #000000;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    flex-direction: column;
+    gap: 15px;
+    opacity: 1;
+    transition: 3s;
+
+}
+
+.full-btn {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex
+;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    gap: 3px;
+    box-shadow: 0 0 0px 2px #ffffff;
+    border: 2px solid #000000;
+  	cursor: pointer;
+}
+
+
+.moji {
+    background-image: url(rj.gif);
+    width: 60px;
+    height: 60px;
+    display: block;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.infi-loop {
+  animation: rotar 2s linear infinite;
+}
+
+@keyframes rotar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.moji-tx {
+	    font-size: 12px;
+    color: #fff;
+}
+
+.background {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: radial-gradient(circle at center, #fff0fa 0%, transparent 70%);
+	animation: pulse 6s ease-in-out infinite;
+	z-index: 0;
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		opacity: 0.6;
+	}
+	50% {
+		opacity: 1;
+	}
+}
+
+* {
+	box-sizing:border-box;
+}
+
+.full-bod {
+	    width: 100%;
+    height: 100%;
+    position: relative;
+    font-family: "Segoe UI";
+    overflow: auto;
+    display: flex
+;
+    align-items: center;
+    
+}
+.inner-bod {
+	display: flex
+;
+    position: relative;
+    flex-direction: column;
+    margin: auto;
+    width: 100%;
+    align-items: center;
+    padding: 25px;
+}
+
+.title-1 {
+	    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: #740028;
+}
+
+.title-2 {
+	        font-weight: bold;
+    font-size: 34px;
+    color: #7032bd;
+    margin-bottom: 45px;
+}
+
+.cake {
+	width: 200px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.cktop {
+	    width: 58%;
+    height: 70px;
+    background-image: url(mang_new.gif);
+    background-position: center bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.layer {
+	height: 60px;
+	border-radius: 20px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.layer-1 {
+	background: #f7aef8;
+	width: 70%;
+}
+
+.layer-2 {
+	background: #b388eb;
+	width: 85%;
+}
+
+.layer-3 {
+	background: #8093f1;
+	width: 100%;
+}
+
+.layer-4 {
+	background: #3e3e3e;
+	width: 100%;
+	height: 8px;
+}
+
+.candle {
+	position: absolute;
+	width: 10px;
+	height: 40px;
+	background: #ff5e5e;
+	border-radius: 2px;
+}
+
+.candle-1 {
+	bottom: 0;
+	left: 0;
+}
+
+.candle-2 {
+	bottom: 0;
+	right: 0;
+}
+
+.flame {
+	position: absolute;
+	top: -15px;
+	left: 50%;
+	width: 14px;
+	height: 14px;
+	background: radial-gradient(ellipse at center, #ffdc73, #ff9900);
+	border-radius: 50%;
+	transform: translateX(-50%);
+	animation: flicker 0.3s infinite;
+}
+
+@keyframes flicker {
+	0%,
+	100% {
+		transform: translateX(-50%) scale(1);
+	}
+	50% {
+		transform: translateX(-50%) scale(1.2);
+	}
+}
+
+.canvv {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+.message {
+	    margin-top: 30px;
+    color: #202020;
+    max-width: 350px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.dissap {
+opacity: 0 !important;
+}
+
+</style>
+
+  	</head>
+	<body>
+
+<audio id="miAudio" src="dreamers.mp3" loop></audio>
+
+		<div class="full-start" id="blackov">
+			<span class="moji-tx">Presiona a RJ</span>
+			<button class="full-btn" id="btbt1" onclick="istart()">
+				<i class="moji"></i>
+				
+			</button>
+		</div>
+
+		<div class="background"></div>
+	<canvas id="sparkles" class="canvv"></canvas>
+	<div class="full-bod">
+		<div class="inner-bod">
+			<div class="title-1">Feliz cumpleaños</div>
+			<div class="title-2">🥳 Helemshita 🥳</div>
+
+			<div class="cake">
+				<div class="cktop">
+					<div class="candle candle-1">
+						<div class="flame"></div>
+					</div>
+					<div class="candle candle-2">
+						<div class="flame"></div>
+					</div>
+				</div>
+				
+				<div class="layer layer-1"></div>
+				<div class="layer layer-2"></div>
+				<div class="layer layer-3"></div>
+				<div class="layer layer-4"></div>
+			</div>
+
+			<div class="message">Un viaje familiar más para la colección. Como una persona sabia dijo alguna vez: "De que sirve decir algún día, si nunca lo planifica y nunca lo hará llegar". Entonces es hora de pensar en metas en vez de sueños 😺. Pásala bonito el día de hoy con tus seres queridos, afortunados de tener a alguien que cumple muy bien el cuarto mandamiento. Porque sé que estas metas siempre piensas en tus seres queridos, y ahora, una velita más en un lugar de relajación 😊. Que lleguen muchos años más y con ellos muchos nuevos destinos. HBH<br><br>🧡 💛 💚 💙 💜 🤍</div>
+
+		</div>
+	</div>
+
+<script>
+
+	const canvas = document.getElementById("sparkles");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let sparkles = [];
+
+function createSparkle() {
+  const x = Math.random() * canvas.width;
+  const y = Math.random() * canvas.height;
+  const size = Math.random() * 3 + 1;
+  const speed = Math.random() * 0.5 + 0.2;
+  const hue = Math.floor(Math.random() * 360);
+  sparkles.push({ x, y, size, speed, hue });
+}
+
+function animateSparkles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  for (let i = 0; i < sparkles.length; i++) {
+    let s = sparkles[i];
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+    ctx.fillStyle = `hsl(${s.hue}, 100%, 70%)`;
+    ctx.fill();
+
+    s.y -= s.speed;
+    s.x += Math.sin(s.y * 0.05) * 0.5;
+
+    if (s.y < -s.size) {
+      sparkles.splice(i, 1);
+      i--;
+    }
+  }
+
+  while (sparkles.length < 200) {
+    createSparkle();
+  }
+
+  requestAnimationFrame(animateSparkles);
+}
+
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+
+animateSparkles();
+
+function istart() {
+      const audio = document.getElementById("miAudio");
+      audio.play();
+
+const divBtn = document.getElementById("btbt1");
+const divOver = document.getElementById("blackov");
+
+divBtn.classList.add("infi-loop");
+
+setTimeout(() => {
+        divOver.classList.add("dissap");
+      }, 5000);
+
+setTimeout(() => {
+        if (divOver) {
+          divOver.remove();
+        }
+      }, 8000);
+
+    }
+	
+</script>
+
+	</body>
+</html>
